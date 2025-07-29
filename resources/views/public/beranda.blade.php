@@ -5,20 +5,28 @@
 @section('content')
 
 {{-- ============== BAGIAN HERO & SAMBUTAN ============== --}}
-{{-- PERBAIKAN: Margin bawah diubah dari mb-32 menjadi mb-24 agar tidak terlalu jauh --}}
-<div class="relative h-[70vh] md:h-[80vh] w-full mb-24">
-    
+{{-- PERBAIKAN: Menghapus margin-bottom karena spasi diatur oleh padding di section berikutnya --}}
+<div class="relative h-[70vh] md:h-[80vh] w-full">
     {{-- Background Image --}}
     <div class="absolute inset-0">
-        <img src="https://mediaim.expedia.com/destination/1/d50161da929c9ced4b907b227ff324b2.jpg" 
+        <img src="https://pererenan.desa.id/storage/pererenan/image/WhatsApp%20Image%202024-12-11%20at%209.26.01%20AM.jpeg" 
              alt="Pemandangan Desa" 
              class="w-full h-full object-cover">
-        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+        {{-- Gradasi: atas ke tengah hitam, tengah ke bawah putih --}}
+        <div class="absolute inset-0 bg-gradient-to-b from-black/70 via-transparent to-white/80"></div>
+    </div>
+
+    {{-- Kalimat tentang sistem informasi desa adat --}}
+    <div class="relative z-10 flex flex-col items-center justify-center h-full text-center text-white px-4">
+        <h1 class="text-4xl md:text-5xl font-bold mb-4 drop-shadow-lg">Sistem Informasi Desa Adat Pererenan</h1>
+        <p class="text-lg md:text-xl max-w-2xl drop-shadow-md">
+            Portal resmi untuk informasi, layanan, dan transparansi kegiatan Desa Adat Pererenan. Dapatkan berita terbaru, pengumuman, serta akses berbagai layanan desa secara mudah dan cepat.
+        </p>
     </div>
 
     {{-- Kartu Sambutan yang Overlap --}}
-    {{-- PERBAIKAN: Posisi bottom diubah agar overlap lebih pas --}}
-    <div class="absolute bottom-[-4rem] left-1/2 -translate-x-1/2 w-[90%] max-w-4xl">
+    {{-- PERBAIKAN: Posisi bottom dibuat responsif. Lebih rendah di mobile (agar tidak menabrak teks) dan lebih pas di desktop. --}}
+    <div class="absolute bottom-[-14rem] md:bottom-[-8rem] left-1/2 -translate-x-1/2 w-[90%] max-w-4xl">
         <div class="bg-white p-6 md:p-8 rounded-2xl shadow-2xl border border-gray-100">
             <div class="flex flex-col md:flex-row items-center gap-6 text-center md:text-left">
                 <div class="flex-shrink-0">
@@ -38,8 +46,8 @@
 </div>
 
 {{-- ============== KONTEN HALAMAN LAINNYA ============== --}}
-{{-- PERBAIKAN: Padding atas (pt) dikurangi agar jarak dari kartu sambutan lebih ideal --}}
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
+{{-- PERBAIKAN: Padding atas (pt) dibuat responsif untuk menyesuaikan dengan posisi kartu sambutan yang baru --}}
+<div class="container mx-auto px-4 sm:px-6 lg:px-8 pt-64 md:pt-40 pb-16">
     <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
 
         {{-- ============== KONTEN UTAMA (KIRI) - COL-SPAN-2 ============== --}}
