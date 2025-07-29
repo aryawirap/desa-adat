@@ -23,13 +23,20 @@
     <div class="flex h-screen bg-gray-100">
         
         <aside class="w-64 flex-shrink-0 bg-gray-800 text-gray-200 flex flex-col">
-            {{-- Logo / Judul Admin --}}
-            <div class="h-20 flex items-center justify-center bg-gray-900">
-                <h1 class="text-xl font-bold">Desa Adat Pererenan</h1>
+           {{-- Logo / Judul Admin --}}
+        <a href="{{ url('/admin/dashboard') }}">
+            <div class="h-20 flex items-center justify-center bg-gray-900 hover:bg-gray-700 transition-colors">
+                <h1 class="text-xl font-bold text-white">Desa Adat Pererenan</h1>
             </div>
+        </a>
 
             <nav class="flex-grow p-4 space-y-1">
-                
+                <a href="{{ route('admin.dashboard') }}" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                    <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6A2.25 2.25 0 016 3.75h2.25A2.25 2.25 0 0110.5 6v2.25a2.25 2.25 0 01-2.25 2.25H6A2.25 2.25 0 013.75 8.25V6zM3.75 15.75A2.25 2.25 0 016 13.5h2.25a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 018.25 20.25H6A2.25 2.25 0 013.75 18v-2.25zM13.5 6A2.25 2.25 0 0115.75 3.75h2.25A2.25 2.25 0 0120.25 6v2.25A2.25 2.25 0 0118 10.5h-2.25A2.25 2.25 0 0113.5 8.25V6zM13.5 15.75A2.25 2.25 0 0115.75 13.5h2.25a2.25 2.25 0 012.25 2.25V18A2.25 2.25 0 0118 20.25h-2.25A2.25 2.25 0 0113.5 18v-2.25z" />
+                    </svg>
+                    Dashboard
+                </a>
                 {{-- Menu Profil Desa (Dropdown) --}}
                 <div x-data="{ open: false }">
                     <button @click="open = !open" class="w-full flex items-center justify-between px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
@@ -55,7 +62,6 @@
                          <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                     </button>
                     <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
-                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Struktur Organisasi</a>
                         <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">LPM</a>
                         <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">BPD</a>
                         <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">LPD</a>
@@ -89,7 +95,7 @@
                 </div>
                 {{-- =================================== --}}
 
-                <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                <a href="{{ route('admin.berita.index') }}" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
                     <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
                     </svg>

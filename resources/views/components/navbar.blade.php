@@ -47,7 +47,6 @@
                          x-transition:leave-end="opacity-0 transform -translate-y-2"
                          class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-20 overflow-y-auto max-h-96">
                         {{-- Ganti '#' dengan route yang sesuai nanti --}}
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">Struktur Organisasi</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">LPD</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">PECALANG</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">YOWANA DESA ADAT</a>

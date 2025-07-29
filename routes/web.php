@@ -2,7 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProfilDesaController;
-use App\Http\Controllers\Public\ProfilController; 
+use App\Http\Controllers\Public\ProfilController;
+use App\Http\Controllers\Admin\BeritaController; 
+use App\Http\Controllers\Public\BeritaController as PublicBeritaController; 
 
 Route::get('/', function () {
     return view('public.beranda');
@@ -14,6 +16,16 @@ Route::get('/berita', function () {
 // TAMBAHKAN ROUTE BARU INI
 Route::get('/profil/visi-misi', [ProfilController::class, 'visiMisi'])->name('public.visi-misi');
 Route::get('/profil/sejarah', [ProfilController::class, 'sejarah'])->name('public.sejarah');
+
+Route::get('/berita', [PublicBeritaController::class, 'index'])->name('public.berita.index');
+Route::get('/berita/{slug}', [PublicBeritaController::class, 'show'])->name('public.berita.show');
+
+
+
+
+
+
+
 
 // ============== ROUTE UNTUK ADMIN ==============
 Route::prefix('admin')->group(function () {
@@ -38,4 +50,9 @@ Route::prefix('admin')->name('admin.')->group(function () {
     // Route untuk Sejarah
     Route::get('/sejarah', [ProfilDesaController::class, 'sejarahIndex'])->name('sejarah.index');
     Route::put('/sejarah', [ProfilDesaController::class, 'sejarahUpdate'])->name('sejarah.update');
+});
+
+Route::prefix('admin')->name('admin.')->group(function () {
+    // ... route lain yang sudah ada
+    Route::resource('berita', BeritaController::class);
 });
