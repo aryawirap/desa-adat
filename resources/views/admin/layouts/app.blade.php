@@ -25,7 +25,7 @@
         <aside class="w-64 flex-shrink-0 bg-gray-800 text-gray-200 flex flex-col">
             {{-- Logo / Judul Admin --}}
             <div class="h-20 flex items-center justify-center bg-gray-900">
-                <h1 class="text-xl font-bold">Desa Pererenan</h1>
+                <h1 class="text-xl font-bold">Desa Adat Pererenan</h1>
             </div>
 
             <nav class="flex-grow p-4 space-y-1">
@@ -40,7 +40,7 @@
                         <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
                     </button>
                     <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
-                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Visi dan Misi</a>
+                        <a href="{{ route('admin.visi-misi.index') }}" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Visi dan Misi</a>
                         <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Sejarah</a>
                     </div>
                 </div>
