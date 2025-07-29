@@ -12,6 +12,7 @@ class ProfilDesa extends Model
     protected $fillable = [
         'visi',
         'misi',
+        'sejarah',
     ];
 
     /**

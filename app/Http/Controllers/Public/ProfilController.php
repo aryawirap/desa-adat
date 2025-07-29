@@ -20,4 +20,10 @@ class ProfilController extends Controller
         // Kirim data ke view publik yang baru dibuat
         return view('public.profil.visi-misi', compact('profil'));
     }
+
+    public function sejarah()
+{
+    $profil = ProfilDesa::first();
+    return view('public.profil.sejarah', compact('profil'));
+}
 }

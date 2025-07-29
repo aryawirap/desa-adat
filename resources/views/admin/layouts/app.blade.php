@@ -41,7 +41,7 @@
                     </button>
                     <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
                         <a href="{{ route('admin.visi-misi.index') }}" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Visi dan Misi</a>
-                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Sejarah</a>
+                        <a href="{{ route('admin.sejarah.index') }}" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Sejarah</a>
                     </div>
                 </div>
 
@@ -140,5 +140,6 @@
             </main>
         </div>
     </div>
+    @stack('scripts')
 </body>
 </html>

@@ -41,4 +41,26 @@ class ProfilDesaController extends Controller
         return redirect()->route('admin.visi-misi.index')
                          ->with('success', 'Data Visi dan Misi berhasil diperbarui!');
     }
+    public function sejarahIndex()
+{
+    $profil = ProfilDesa::firstOrCreate([]);
+    return view('admin.sejarah', compact('profil'));
 }
+
+/**
+ * Mengupdate data sejarah di database.
+ */
+public function sejarahUpdate(Request $request)
+{
+    $request->validate(['sejarah' => 'nullable|string']);
+
+    $profil = ProfilDesa::firstOrCreate([]);
+    
+    $profil->update(['sejarah' => $request->sejarah]);
+
+    return redirect()->route('admin.sejarah.index')
+                     ->with('success', 'Data Sejarah Desa berhasil diperbarui!');
+}
+}
+
+
