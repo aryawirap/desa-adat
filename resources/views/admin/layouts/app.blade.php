@@ -25,27 +25,93 @@
         <aside class="w-64 flex-shrink-0 bg-gray-800 text-gray-200 flex flex-col">
             {{-- Logo / Judul Admin --}}
             <div class="h-20 flex items-center justify-center bg-gray-900">
-                <h1 class="text-xl font-bold">Admin Panel</h1>
+                <h1 class="text-xl font-bold">Desa Pererenan</h1>
             </div>
 
-            {{-- Menu Navigasi --}}
-            <nav class="flex-grow p-4 space-y-2">
-                <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors
-                    {{ request()->is('admin/dashboard') ? 'bg-gray-700 text-white' : 'hover:bg-gray-700 hover:text-white' }}">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M3 12l2-2m0 0l7-7 7 7M5 10v10a2 2 0 002 2h10a2 2 0 002-2V10M9 20h6"></path></svg>
-                    Dashboard
-                </a>
+            <nav class="flex-grow p-4 space-y-1">
+                
+                {{-- Menu Profil Desa (Dropdown) --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex items-center justify-between px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h6.375a.375.375 0 01.375.375v1.5a.375.375 0 01-.375.375H9a.375.375 0 01-.375-.375v-1.5A.375.375 0 019 6.75zM9 12.75h6.375a.375.375 0 01.375.375v1.5a.375.375 0 01-.375.375H9a.375.375 0 01-.375-.375v-1.5A.375.375 0 019 12.75z" /></svg>
+                            Profil Desa
+                        </span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </button>
+                    <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Visi dan Misi</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Sejarah</a>
+                    </div>
+                </div>
+
+                {{-- Menu Lembaga Adat (Dropdown) --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex items-center justify-between px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m-7.5-2.962A3.75 3.75 0 0112 15v-2.25m-3.75 0A3.75 3.75 0 016 15v-2.25m3.75 0V15m-3.75-2.25v-2.25A3.75 3.75 0 019 6.75v2.25m3.75 0V6.75A3.75 3.75 0 0115 9.75v2.25m-3.75 0h3.75m-3.75 0A3.75 3.75 0 019 15v2.25m3.75 0V15a3.75 3.75 0 013.75-3.75M9 15v2.25A3.75 3.75 0 015.25 21v-2.25m13.5-6.75v-2.25a3.75 3.75 0 00-3.75-3.75h-3a3.75 3.75 0 00-3.75 3.75v2.25m6.75 0v-2.25a3.75 3.75 0 00-3.75-3.75h-3a3.75 3.75 0 00-3.75 3.75v2.25m6.75 0h3.75" /></svg>
+                            Lembaga Adat
+                        </span>
+                         <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </button>
+                    <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Struktur Organisasi</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">LPM</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">BPD</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">LPD</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">PECALANG</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">YOWANA DESA ADAT</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">BUPDA</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">SEKAA GONG</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">PAIKETAN PEMANGKU</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">PAIKETAN SERATI</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">PAIKETAN KRAMA ISTRI</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">BANJAR ADAT</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">BAGA DESA ADAT</a>
+                    </div>
+                </div>
+
+                {{-- =================================== --}}
+                {{-- PERUBAHAN MENU INFORMASI DI SINI    --}}
+                {{-- =================================== --}}
+                <div x-data="{ open: false }">
+                    <button @click="open = !open" class="w-full flex items-center justify-between px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                        <span class="flex items-center">
+                            <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" /></svg>
+                            Informasi
+                        </span>
+                        <svg :class="{'rotate-180': open}" class="w-4 h-4 transition-transform" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" /></svg>
+                    </button>
+                    <div x-show="open" x-transition class="pl-8 pt-1 space-y-1">
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Pengumuman</a>
+                        <a href="#" class="block w-full text-left px-4 py-2 text-sm rounded-lg transition-colors hover:bg-gray-700 hover:text-white">Awig Awig</a>
+                    </div>
+                </div>
+                {{-- =================================== --}}
+
                 <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3h2m-4 3V5a2 2 0 012-2h2a2 2 0 012 2v1m-6 0h6"></path></svg>
+                    <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5" />
+                    </svg>
                     Berita
                 </a>
-                 <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197m0 0A10.99 10.99 0 0112 5.197m0 0A10.99 10.99 0 0121 15.197M15 21a6 6 0 00-9-5.197"></path></svg>
-                    Pengguna
+                
+                {{-- Menu Galeri --}}
+                <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                    <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 15.75l5.159-5.159a2.25 2.25 0 013.182 0l5.159 5.159m-1.5-1.5l1.409-1.409a2.25 2.25 0 013.182 0l2.909 2.909m-18 3.75h16.5a1.5 1.5 0 001.5-1.5V6a1.5 1.5 0 00-1.5-1.5H3.75A1.5 1.5 0 002.25 6v12a1.5 1.5 0 001.5 1.5zm10.5-11.25h.008v.008h-.008V8.25zm.375 0a.375.375 0 11-.75 0 .375.375 0 01.75 0z" /></svg>
+                    Galeri
                 </a>
+
+                {{-- Menu Kontak --}}
                  <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
-                    <svg class="w-5 h-5 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.096 2.572-1.065z"></path><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                    Pengaturan
+                    <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" /></svg>
+                    Kontak
+                </a>
+
+                {{-- Menu Pengaduan --}}
+                 <a href="#" class="flex items-center px-4 py-2 rounded-lg transition-colors hover:bg-gray-700 hover:text-white">
+                    <svg class="w-5 h-5 mr-3" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 9v3.75m-9.303 3.376c-.866 1.5.217 3.374 1.948 3.374h14.71c1.73 0 2.813-1.874 1.948-3.374L13.949 3.378c-.866-1.5-3.032-1.5-3.898 0L2.697 16.126zM12 15.75h.007v.008H12v-.008z" /></svg>
+                    Pengaduan
                 </a>
             </nav>
         </aside>

@@ -28,7 +28,6 @@
                          class="absolute mt-2 w-48 bg-white rounded-md shadow-lg z-20">
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">Visi & Misi</a>
                         <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">Sejarah Desa</a>
-                        <a href="#" class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 hover:text-blue-600">Peta Wilayah</a>
                     </div>
                 </div>
                 {{-- Dropdown: Lembaga Adat --}}

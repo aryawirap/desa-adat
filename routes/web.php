@@ -5,6 +5,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('public.beranda');
 });
+// TAMBAHKAN ROUTE INI UNTUK HALAMAN BERITA
+Route::get('/berita', function () {
+    return view('public.berita');
+});
 
 // ============== ROUTE UNTUK ADMIN ==============
 Route::prefix('admin')->group(function () {
