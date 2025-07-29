@@ -30,7 +30,7 @@ class BeritaController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $data = $request->all();
+        $data = $request->except('_token', 'is_published');
         $data['slug'] = Str::slug($request->title);
         $data['user_id'] = Auth::id();
 
@@ -58,7 +58,7 @@ class BeritaController extends Controller
             'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
 
-        $data = $request->all();
+        $data = $request->except('_token', '_method', 'is_published');
         $data['slug'] = Str::slug($request->title);
 
         if ($request->hasFile('image')) {
